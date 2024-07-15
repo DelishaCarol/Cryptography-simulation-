@@ -1,0 +1,21 @@
+[ req ]
+default_bits       = 3072
+default_md         = sha384
+default_keyfile    = rootCA.key
+prompt             = no
+encrypt_key        = no
+distinguished_name = req_distinguished_name
+
+[ req_distinguished_name ]
+C            = IN
+ST           = Karnataka
+L            = Udupi
+O            = Manipal Institute of Technology
+OU           = ECE Department
+CN           = Manipal Institute of Technology Root CA
+
+[ v3_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer
+basicConstraints = critical, CA:true
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
